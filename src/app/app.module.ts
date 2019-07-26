@@ -8,6 +8,7 @@ import {LoginComponent} from './component/login/login.component';
 import {AppRoutingModule} from './app.routing.module';
 import {AuthService} from './component/login/auth.service';
 import {FormsModule} from '@angular/forms';
+import {AuthGuard} from './guard/auth.guard';
 // import {CursosModule} from './component/cursos/cursos.module';
 // import {AlunosModule} from './component/alunos/alunos.module';
 
@@ -27,7 +28,7 @@ import {FormsModule} from '@angular/forms';
         AppRoutingModule,
         FormsModule,
     ],
-    providers: [AuthService],
+    providers: [AuthService, AuthGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule {
