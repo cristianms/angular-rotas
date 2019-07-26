@@ -3,8 +3,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {AlunosComponent} from './alunos.component';
 import {AlunoDetalheComponent} from './aluno-detalhe/aluno-detalhe.component';
 import {AlunoFormComponent} from './aluno-form/aluno-form.component';
-import {AlunosGuard} from '../../guard/alunos.guard';
-import {AlunosDeactivateGuard} from '../../guard/alunos-deactivate.guard';
+import {AlunosGuard} from './guard/alunos.guard';
+import {AlunosDeactivateGuard} from './guard/alunos-deactivate.guard';
+import {AlunoDetalheResolver} from './guard/aluno-detalhe.resolver';
 
 
 const alunosRoutes: Routes = [
@@ -19,7 +20,8 @@ const alunosRoutes: Routes = [
             },
             {
                 path: ':id',
-                component: AlunoDetalheComponent
+                component: AlunoDetalheComponent,
+                resolve: { aluno: AlunoDetalheResolver }
             },
             {
                 path: ':id/editar',

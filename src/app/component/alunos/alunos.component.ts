@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AlunosService} from '../alunos.service';
+import {AlunosService} from './alunos.service';
 import {Router} from '@angular/router';
+import {Aluno} from './aluno';
 
 @Component({
     selector: 'app-alunos',
@@ -9,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class AlunosComponent implements OnInit {
 
-    arrAlunos: any;
+    arrAlunos: Aluno[];
 
     constructor(
         private objAlunosService: AlunosService,

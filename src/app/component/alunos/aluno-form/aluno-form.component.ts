@@ -1,8 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AlunosService} from '../../alunos.service';
+import {AlunosService} from '../alunos.service';
 import {IFormCandeactivate} from '../../../interfaces/iform-candeactivate';
+import {Aluno} from '../aluno';
 
 @Component({
     selector: 'app-aluno-form',
@@ -12,7 +13,7 @@ import {IFormCandeactivate} from '../../../interfaces/iform-candeactivate';
 export class AlunoFormComponent implements OnInit, OnDestroy, IFormCandeactivate {
 
     id: number;
-    aluno: any;
+    aluno: Aluno;
     inscricao: Subscription;
     formMudou: boolean;
 
@@ -30,7 +31,7 @@ export class AlunoFormComponent implements OnInit, OnDestroy, IFormCandeactivate
             this.aluno = this.objAlunosService.getAluno(this.id);
 
             if (this.aluno === null) {
-                this.aluno = {};
+                this.aluno = new Aluno(null, null, null);
             }
         });
     }

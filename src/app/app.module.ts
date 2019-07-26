@@ -10,7 +10,7 @@ import {AuthService} from './component/login/auth.service';
 import {FormsModule} from '@angular/forms';
 import {AuthGuard} from './guard/auth.guard';
 import {CursosGuard} from './guard/cursos.guard';
-import {AlunosGuard} from './guard/alunos.guard';
+import {AlunosGuard} from './component/alunos/guard/alunos.guard';
 // import {CursosModule} from './component/cursos/cursos.module';
 // import {AlunosModule} from './component/alunos/alunos.module';
 

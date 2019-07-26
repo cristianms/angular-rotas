@@ -18,6 +18,9 @@ export class AuthGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
+        console.log('Auth Guard');
+
         if (this.objAuthService.usuarioEstaAutenticado()) {
             return true;
         }
