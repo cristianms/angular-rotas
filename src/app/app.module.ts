@@ -9,6 +9,8 @@ import {AppRoutingModule} from './app.routing.module';
 import {AuthService} from './component/login/auth.service';
 import {FormsModule} from '@angular/forms';
 import {AuthGuard} from './guard/auth.guard';
+import {CursosGuard} from './guard/cursos.guard';
+import {AlunosGuard} from './guard/alunos.guard';
 // import {CursosModule} from './component/cursos/cursos.module';
 // import {AlunosModule} from './component/alunos/alunos.module';
 
@@ -28,7 +30,12 @@ import {AuthGuard} from './guard/auth.guard';
         AppRoutingModule,
         FormsModule,
     ],
-    providers: [AuthService, AuthGuard],
+    providers: [
+        AuthService,
+        AuthGuard,
+        AlunosGuard,
+        CursosGuard
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

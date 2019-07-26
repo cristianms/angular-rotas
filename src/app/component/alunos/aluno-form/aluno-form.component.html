@@ -9,11 +9,25 @@
             <label for="id" class="active">#</label>
         </div>
         <div class="input-field col s12">
-            <input placeholder="Nome completo" name="nome" id="nome" type="text" class="validate" [(ngModel)]="aluno.nome" >
+            <input type="text"
+                   name="nome"
+                   id="nome"
+                   class="validate"
+                   placeholder="Nome completo"
+                   [(ngModel)]="aluno.nome"
+                   (input)="onInput()"
+                   />
             <label for="nome" class="active">Nome</label>
         </div>
         <div class="input-field col s12">
-            <input placeholder="email@endereco.com" name="email" id="email" type="text" class="validate" [(ngModel)]="aluno.email">
+            <input type="text"
+                   placeholder="email@endereco.com"
+                   name="email"
+                   id="email"
+                   class="validate"
+                   [(ngModel)]="aluno.email"
+                   (input)="onInput()"
+                   >
             <label for="email" class="active">E-mail</label>
         </div>
     </div>

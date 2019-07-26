@@ -15,7 +15,6 @@ export class AlunosComponent implements OnInit {
         private objAlunosService: AlunosService,
         private router: Router,
     ) {
-        console.log('123456');
     }
 
     ngOnInit() {

@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './component/home/home.component';
 import {LoginComponent} from './component/login/login.component';
 import {AuthGuard} from './guard/auth.guard';
+import {CursosGuard} from './guard/cursos.guard';
+// import {AlunosGuard} from './guard/alunos.guard';
 
 const appRoutes: Routes = [
 
@@ -11,11 +13,13 @@ const appRoutes: Routes = [
         path: 'cursos',
         loadChildren: './component/cursos/cursos.module#CursosModule',
         canActivate: [AuthGuard],
+        canActivateChild: [CursosGuard],
     },
     {
         path: 'alunos',
         loadChildren: './component/alunos/alunos.module#AlunosModule',
         canActivate: [AuthGuard],
+        // canActivateChild: [AlunosGuard],
     },
     {
         path: 'login',
