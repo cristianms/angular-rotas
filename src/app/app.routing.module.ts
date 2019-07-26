@@ -4,6 +4,7 @@ import {HomeComponent} from './component/home/home.component';
 import {LoginComponent} from './component/login/login.component';
 import {AuthGuard} from './guard/auth.guard';
 import {CursosGuard} from './guard/cursos.guard';
+import {PaginaNaoEncontradaComponent} from './component/pagina-nao-encontrada/pagina-nao-encontrada.component';
 // import {AlunosGuard} from './guard/alunos.guard';
 
 const appRoutes: Routes = [
@@ -28,10 +29,19 @@ const appRoutes: Routes = [
         component: LoginComponent,
     },
     {
-        path: '',
+        path: 'home',
         component: HomeComponent,
         canActivate: [AuthGuard],
         canLoad: [AuthGuard],
+    },
+    {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+    },
+    {
+        path: '**',
+        component: PaginaNaoEncontradaComponent,
     },
 ];
 
